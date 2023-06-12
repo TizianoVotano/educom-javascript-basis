@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Convert to string
+    const one = () => {
+        const beatles = ["Ringo", "Paul", "George", "John"];
+        const asString = beatles.toString();
+        console.log({ asString: asString });
+
+        const asJoin = beatles.join(" * ");
+        console.log({ asJoin: asJoin });
+    }
+
+    // Modify
+    const two = () => {
+        const beatles = ["Ringo", "Paul", "what's his name?", "John"]
+        console.log({ before: beatles })
+
+        beatles[2] = "George"
+        console.log({ after: beatles })
+    }
+
+    // Sorting
+    const three = () => {
+        const beatles = ["Ringo", "Paul", "George", "John"]
+        beatles.sort()
+        console.log(beatles)
+
+        /// But...
+
+        const points = [40, 100, 1, 5, 25, 10]
+        points.sort()
+        console.log(points)
+        /// ????
+    }
+
+    // Compare method
+    const four = () => {
+        const points = [40, 100, 1, 5, 25, 10]
+        points.sort()
+        console.log({ strange: points })
+
+        // Let's correct it
+        const points2 = [40, 100, 1, 5, 25, 10]
+        points2.sort((a, b) => a - b)
+        console.log({ proper: points2 })
+    }
+
+    // Looping through arrays
+    const five = () => {
+        let txt = ""
+        const beatles = ["Ringo", "Paul", "George", "John"]
+
+        beatles.forEach((value, index, array) => {
+            txt += `${value.toUpperCase()} - `
+        })
+
+        console.log(txt)
+    }
+
+    // map
+    const six = () => {
+        let txt = ""
+        const beatles = ["Ringo", "Paul", "George", "John"]
+
+        const n = beatles.map(item => {
+            return (item.toUpperCase())
+        })
+
+        console.log(n)
+    }
+
+    // filter
+    const seven = () => {
+        const myFunction = (value, index, array) => {
+            return value > 18
+        }
+
+        const numbers = [45, 4, 9, 16, 25]
+        const over18 = numbers.filter(myFunction)
+
+        //// or
+        const n = numbers.filter(value => value > 18)
+        console.log(over18, n)
+    }
+
+    // indexOf & find
+    const eight = () => {
+        const fruits = ["Apple", "Orange", "Apple", "Mango"]
+        const numbers = [4, 9, 16, 25, 29]
+
+        /// Helper function
+        const findOver18 = (item) => {
+            return item > 18
+        }
+
+        /// indexOf
+        const a = fruits.indexOf("Apple")
+        const b = fruits.lastIndexOf("Apple")
+
+        // find
+        const c = numbers.find(findOver18)
+        const d = numbers.findIndex(findOver18)
+
+        console.log({ a: a, b: b, c: c, d: d })
+    }
+
+    console.log('First');one();
+    console.log('Second');two();
+    console.log('Third');three();
+    console.log('Fourth');four();
+    console.log('Fifth');five();
+    console.log('Sixth');six();
+    console.log('Seventh');seven();
+    console.log('Eighth');eight();
+
+
+
+</script>
+
+</html>
