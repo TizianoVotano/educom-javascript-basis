@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class car {
+            /// Properties
+            color = "";
+            
+            /// Constructor
+            constructor(color) {
+                this.color = color;
+            }
+            
+            /// Methods
+            getColor() {
+                return(this.color);
+            }
+        }
+    
+        const fiat = new car("red");
+        const porsche = new car("black");
+        
+        console.log({
+            fiat: fiat.getColor(), 
+            porsche: porsche.getColor()
+        });
+    
+    </script>
+    
+</body>
+</html>
