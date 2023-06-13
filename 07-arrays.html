@@ -13,7 +13,7 @@
 <script>
     // Convert to string
     const one = () => {
-        const beatles = ["Ringo", "Paul", "George", "John"];
+        const beatles = ["Ringo", "Paul", "Georga", "John"];
         const asString = beatles.toString();
         console.log({ asString: asString });
 
@@ -24,10 +24,13 @@
     // Modify
     const two = () => {
         const beatles = ["Ringo", "Paul", "what's his name?", "John"]
-        console.log({ before: beatles })
+        const before = { before : beatles }
+        console.log({before : beatles})
+        alert({before : beatles})
 
         beatles[2] = "George"
-        console.log({ after: beatles })
+        const after = { after : beatles }
+        console.log(after)
     }
 
     // Sorting
@@ -123,8 +126,6 @@
     console.log('Sixth');six();
     console.log('Seventh');seven();
     console.log('Eighth');eight();
-
-
 
 </script>
 
